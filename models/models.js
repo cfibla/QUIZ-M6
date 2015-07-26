@@ -16,7 +16,7 @@ var storage = process.env.DATABASE_STORAGE;
 var Sequelize=require('sequelize');
 
 //Usar DB SQlite o Postgres
-var sequelize=new Sequelize(DB_name, user, pwd,
+var sequelize = new Sequelize(DB_name, user, pwd,
 	{
 		dialect: dialect,
 		protocol: protocol,
@@ -33,7 +33,7 @@ exports.Quiz=Quiz;//exportar definición de tabla Quiz
 
 //sequelize.sync() crea e inicializa tabla de preguntas en la DB
 sequelize.sync().then(function(){
-	//sucess(...) ejecuta el manejador una vez creada la tabla
+	//then(...) ejecuta el manejador una vez creada la tabla
 	Quiz.count().then(function(count){
 		if(count===0)//la tabla se inicializa solo si está vacia
 		{

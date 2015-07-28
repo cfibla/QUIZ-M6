@@ -30,7 +30,7 @@ exports.show = function (req, res){
 //GET /quizes/:id/edit
 exports.edit = function (req, res){
 	var quiz = req.quiz; //autoload instancia de quiz
-	res.render('quizes/edit', {quiz: quiz, errors[]});
+	res.render('quizes/edit', {quiz: quiz, errors:[]});
 };
 
 //GET /quizes/answer

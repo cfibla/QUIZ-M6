@@ -58,9 +58,11 @@ exports.create = function (req, res) {
 				res.render('quizes/new', {quiz: quiz, errors: err.errors});
 			} else {
 				//guarda en la DB los campos pregunta y respuesta de quiz
-				quiz.save({fields: ["pregunta", "respuesta"]})
+				quiz
+				.save({fields: ["pregunta", "respuesta"]})
 				.then(function(){ res.redirect('/quizes')})
 				//redirección HTTP (URL relativo) lista de preguntas
 			}
-		});
+		}
+		);
 };

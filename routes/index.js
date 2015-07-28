@@ -23,7 +23,7 @@ router.get('/quizes/new', quizController.new);
 router.post('/quizes/create', quizController.create);
 
 router.get('/author', function (req, res, next){
-  res.render('author', errors:[])
+  res.render('author',{errors:[]})
 });
 
 module.exports = router;

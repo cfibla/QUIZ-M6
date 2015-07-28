@@ -27,6 +27,12 @@ exports.show = function (req, res){
 	res.render('quizes/show', {quiz: req.quiz,  errors:[]});
 };
 
+//GET /quizes/:id/edit
+exports.edit = function (req, res){
+	var quiz = req.quiz; //autoload instancia de quiz
+	res.render('quizes/edit', {quiz: quiz, errors[]});
+};
+
 //GET /quizes/answer
 exports.answer = function (req, res) {
 	var resultado ='Incorrecto'
@@ -64,5 +70,26 @@ exports.create = function (req, res) {
 				//redirección HTTP (URL relativo) lista de preguntas
 			}
 		}
-		);
+	);
+};
+//PUT /quizes/:id
+exports.update = function (req, res) {
+	req.quiz.pregunta = req.body.quiz.pregunta;
+	req.quiz.respuesta = req.body.quiz.respuesta;
+
+	req.quiz
+	.validate()
+	.then(
+		function(err){
+			if (err) {
+				res.render('quizes/edit', {quiz: req.quiz, errors: err.errors});
+			} else {
+				//guarda en la DB los campos pregunta y respuesta de quiz
+				req.quiz
+				.save({fields: ["pregunta", "respuesta"]})
+				.then(function(){ res.redirect('/quizes')})
+				//redirección HTTP (URL relativo) lista de preguntas
+			}
+		}
+	);
 };

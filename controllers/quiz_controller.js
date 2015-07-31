@@ -39,7 +39,7 @@ exports.index = function (req, res) {
 	.then(function(quizes){
 		res.render('quizes/index', {quizes: quizes, errors:[]});
 	}).catch(function(error){next(error);});
-}};
+};
 
 //GET /quizes/:id
 exports.show = function (req, res){

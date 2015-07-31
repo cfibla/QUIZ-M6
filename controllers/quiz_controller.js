@@ -25,7 +25,7 @@ exports.index = function (req, res) {
 } else {
 
 	if(req.query.tema){
-	var filtro=(req.query.tema || '')
+	var filtro=(req.query.tema || '');
 	models.Quiz.findAll({where:['tema like ?','%'+filtro+'%'],order:'tema ASC'})
 	.then(function(quizes){
 		res.render('quizes/index', {quizes: quizes, errors:[]});

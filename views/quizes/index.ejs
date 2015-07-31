@@ -36,7 +36,7 @@
 		<% if (quizes[0].tema==="Tecnología") { %> selected <% } %>
 	>Tecnología</option>
 	<option value="Otro"
-		<% if (quizes[0].tema==="Otro") { %> selected <% } %>
+		<% if (quizes[0].tema==="Otro"&&quizes[0].tema!==undefined) { %> selected <% } %>
 	>Otro</option>
 	<input type="submit">
 </select><br><br>

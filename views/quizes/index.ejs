@@ -23,9 +23,10 @@
 <form method="get" action="/quizes">
 <label>Tema </label>
     <select name="tema">
+    	<% if (quizes[0].tema===undefined) quizes[0].tema="Humanidades" %>
     	<option value=""disabled
-    	<% if (quizes[0].tema===undefined) { %> selected <% } %>
-    	>Selecciona tema</option>
+    	 selected>
+    	 Selecciona tema</option>
 	<option value="Humanidades"
 		<% if (quizes[0].tema==="Humanidades") { %> selected <% } %>
 	>Humanidades</option>

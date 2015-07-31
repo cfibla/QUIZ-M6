@@ -1,21 +1,11 @@
     <form method="get" action="/quizes">
     	<label>Tema </label>
     <select id="tema">
-	<option value="humanidades"
-	<% if (quizes.tema=="humanidades"||"Humanidades") { %> selected <% } %>
-	>Humanidades</option>
-	<option value="ocio"
-	<% if (quizes.tema=="ocio"||"Ocio") { %> selected <% } %>
-	>Ocio</option>
-	<option value="ciencia"
-	<% if (quizes.tema=="ciencia"||"Ciencia") { %> selected <% } %>
-	>Ciencia</option>
-	<option value="tecnologia"
-	<% if (quizes.tema=="tecnologia"||"Tecnología") { %> selected <% } %>
-	>Tecnología</option>
-	<option value="otro"
-	<% if (quizes.tema=="otro"||"Otro") { %> selected <% } %>
-	>Otro</option>
+		<option name="humanidades" value="humanidades">Humanidades</option>
+	<option name="ocio" value="ocio">Ocio</option>
+	<option name="ciencia" value="ciencia">Ciencia</option>
+	<option name="tecnologia" value="tecnologia">Tecnología</option>
+	<option name="otro" value="otro">Otro</option>
 	<input type="submit">
 </select><br><br>
 </form>

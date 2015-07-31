@@ -1,6 +1,6 @@
     <form method="get" action="/quizes">
     	<label>Tema </label>
-    <select name="tema">
+    <select id="tema" name="quiz[tema]" value="<%= quiz.tema %>"
 	<option value="humanidades"
 	<% if (quizes.tema=="humanidades"||"Humanidades") { %> selected <% } %>
 	>Humanidades</option>

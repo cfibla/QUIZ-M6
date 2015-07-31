@@ -15,7 +15,6 @@ exports.load = function(req, res, next, quizId){
 
 //GET /quizes
 exports.index = function (req, res){
-	
 	if(req.query.search){
 		var filtro=(req.query.search||'').replace(" ","%");
 		models.Quiz.findAll({where:['pregunta like ?','%'+filtro+'%'],order:'pregunta ASC'})
@@ -23,8 +22,7 @@ exports.index = function (req, res){
 			function(quizes){
 				res.render('quizes/index', {quizes: quizes, errors:[]});
 			}
-		)
-		.catch(function(error){next(error);});
+		).catch(function(error){next(error);});
 
 
 	} else {
@@ -37,7 +35,7 @@ exports.index = function (req, res){
 				res.render('quizes/index', {quizes: quizes, errors:[]});
 			}
 		).catch(function(error){next(error);});
-
+}
 	} else {
 
 	models.Quiz.findAll().then(
@@ -67,7 +65,7 @@ exports.answer = function (req, res) {
 		resultado = 'Correcto';
 	}
 		res.render('quizes/answer',
-			{ quiz: req.quiz,
+			{quiz: req.quiz,
 			respuesta: resultado,
 			errors:[]});
 };

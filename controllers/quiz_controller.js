@@ -14,7 +14,7 @@ exports.load = function(req, res, next, quizId){
 };
 
 //GET /quizes
-exports.index = function (req, res) {
+/*exports.index = function (req, res) {
 	if(req.query.search){
 	var filtro=(req.query.search || '').replace(' ','%');
 	models.Quiz.findAll(
@@ -33,7 +33,7 @@ exports.index = function (req, res) {
 				res.render('quizes/index', {quizes: quizes, errors:[]});
 	}).catch(function(error){next(error);});
 
-} /*else {
+} else {
 
 	models.Quiz.findAll()
 	.then(function(quizes){

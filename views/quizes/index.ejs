@@ -1,8 +1,6 @@
 <table>
 	<% var i; for (i=0; i < quizes.length; i++) { %>
-		<tr>
-			<td>
-				    <form method="get" action="/quizes">
+					    <form method="get" action="/quizes">
    	<label>Tema </label>
     <select name="tema">
 	<option value="Humanidades"
@@ -23,7 +21,7 @@
 	<input type="submit">
 </select><br><br>
 </form>
-</td>
+		<tr>
 			<td>
 				<a href="quizes/<%= quizes[i].id %>"><%= quizes[i].tema %></a>
 			</td>

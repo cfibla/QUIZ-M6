@@ -1,3 +1,5 @@
+
+
 <table>
 	<% var i; for (i=0; i < quizes.length; i++) { %>
 		<tr>
@@ -16,5 +18,30 @@
 				</form>
 		</tr>
 		<% } %>
-</table><p>
+</table><br><p>
+
+<form method="get" action="/quizes">
+<label>Tema </label>
+    <select name="tema">
+    	<option value=""disabled
+    	 selected>
+    	 Selecciona tema</option>
+	<option value="Humanidades"
+		<% if (quizes[0].tema==="Humanidades") { %> selected <% } %>
+	>Humanidades</option>
+	<option value="Ocio"
+		<% if (quizes[0].tema==="Ocio") { %> selected <% } %>
+	>Ocio</option>
+	<option value="Ciencia"
+		<% if (quizes[0].tema==="Ciencia") { %> selected <% } %>
+	>Ciencia</option>
+	<option value="Tecnología"
+		<% if (quizes[0].tema==="Tecnología") { %> selected <% } %>
+	>Tecnología</option>
+	<option value="Otro"
+		<% if (quizes[0].tema==="Otro") { %> selected <% } %>
+	>Otro</option>
+	<input type="submit">
+</select><br><br>
+</form>
 <a href = "/quizes/new"><button type"button">Crear pregunta</button></a>

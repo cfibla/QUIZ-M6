@@ -1,7 +1,26 @@
+
+
 <table>
 	<% var i; for (i=0; i < quizes.length; i++) { %>
-					    <form method="get" action="/quizes">
-   	<label>Tema </label>
+		<tr>
+			<td>
+				<a href="quizes/<%= quizes[i].id %>"><%= quizes[i].tema %></a>
+			</td>
+			<td>
+				<a href="quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %></a>
+			</td>
+			<td>
+				<a href="quizes/<%= quizes[i].id %>/edit"><button>editar</button></a>
+			</td>
+			<td>
+				<form method='post' action='quizes/<%= quizes[i].id %>?_method=delete'>
+					<button type='submit' onClick='return confirm("Borrar: <%= quizes[i].pregunta %>");'>borrar</button>
+				</form>
+		</tr>
+		<% } %>
+</table><br><p>
+<form method="get" action="/quizes">
+<label>Tema </label>
     <select name="tema">
 	<option value="Humanidades"
 		<% if (quizes[i].tema==="Humanidades") { %> selected <% } %>
@@ -21,21 +40,4 @@
 	<input type="submit">
 </select><br><br>
 </form>
-		<tr>
-			<td>
-				<a href="quizes/<%= quizes[i].id %>"><%= quizes[i].tema %></a>
-			</td>
-			<td>
-				<a href="quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %></a>
-			</td>
-			<td>
-				<a href="quizes/<%= quizes[i].id %>/edit"><button>editar</button></a>
-			</td>
-			<td>
-				<form method='post' action='quizes/<%= quizes[i].id %>?_method=delete'>
-					<button type='submit' onClick='return confirm("Borrar: <%= quizes[i].pregunta %>");'>borrar</button>
-				</form>
-		</tr>
-		<% } %>
-</table><p>
 <a href = "/quizes/new"><button type"button">Crear pregunta</button></a>

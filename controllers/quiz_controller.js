@@ -14,11 +14,36 @@ exports.load = function(req, res, next, quizId){
 };
 
 //GET /quizes
-exports.index = function (req, res) {
-	models.Quiz.findAll().then(function (quizes){
-		res.render('quizes/index', {quizes: quizes, errors:[]});
+exports.index = function (req, res){
+	if(req.query.search){
+		var filtro=(req.query.search||'').replace(" ","%");
+		models.Quiz.findAll({where:['pregunta like ?','%'+filtro+'%'],order:'pregunta ASC'})
+		.then(
+			function(quizes){
+				res.render('quizes/index', {quizes: quizes, errors:[]});
+			}
+		).catch(function(error){next(error);});
+
+
+	} else 
+
+	if(req.query.tema){
+		var filtro=(req.query.tema || '');
+		models.Quiz.findAll({where:['tema like ?','%'+filtro+'%'],order:'tema ASC'})
+		.then(
+			function(quizes){
+				res.render('quizes/index', {quizes: quizes, errors:[]});
+			}
+		).catch(function(error){next(error);});
+
+	} else {
+
+	models.Quiz.findAll().then(
+		function(quizes){
+			res.render('quizes/index', {quizes: quizes, errors:[]});
+		}
+	).catch(function(error){next(error);});
 	}
-	).catch(function(error){next(error);})
 };
 
 //GET /quizes/:id
@@ -40,7 +65,7 @@ exports.answer = function (req, res) {
 		resultado = 'Correcto';
 	}
 		res.render('quizes/answer',
-			{ quiz: req.quiz,
+			{quiz: req.quiz,
 			respuesta: resultado,
 			errors:[]});
 };
@@ -96,7 +121,7 @@ exports.update = function (req, res) {
 };
 //DELETE/quizes/:id
 exports.destroy = function (req, res){
-	req.quiz.destroy().then( function() {
+	req.quiz.destroy().then(function() {
 		res.redirect('/quizes');
-	}).catch(function (error){next(error)});
+	}).catch(function (error){next(error);});
 };

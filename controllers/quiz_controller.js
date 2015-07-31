@@ -25,7 +25,7 @@ exports.index = function (req, res){
 		).catch(function(error){next(error);});
 
 
-	} else {
+	} else 
 
 	if(req.query.tema){
 		var filtro=(req.query.tema || '');
@@ -35,7 +35,7 @@ exports.index = function (req, res){
 				res.render('quizes/index', {quizes: quizes, errors:[]});
 			}
 		).catch(function(error){next(error);});
-}
+
 	} else {
 
 	models.Quiz.findAll().then(

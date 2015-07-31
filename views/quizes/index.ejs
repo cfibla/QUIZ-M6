@@ -1,28 +1,29 @@
-    <form method="get" action="/quizes">
+<table>
+	<% var i; for (i=0; i < quizes.length; i++) { %>
+		<tr>
+			<td>
+				    <form method="get" action="/quizes">
    	<label>Tema </label>
-    <select name="eltema">
+    <select name="tema">
 	<option value="Humanidades"
-		<% if (quizes.tema==="Humanidades") { %> selected <% } %>
+		<% if (quizes[i].tema==="Humanidades") { %> selected <% } %>
 	>Humanidades</option>
 	<option value="Ocio"
-		<% if (quizes.tema==="Ocio") { %> selected <% } %>
+		<% if (quizes[i].tema==="Ocio") { %> selected <% } %>
 	>Ocio</option>
 	<option value="Ciencia"
-		<% if (quizes.tema==="Ciencia") { %> selected <% } %>
+		<% if (quizes[i].tema==="Ciencia") { %> selected <% } %>
 	>Ciencia</option>
 	<option value="Tecnología"
-		<% if (quizes.tema==="Tecnología") { %> selected <% } %>
+		<% if (quizes[i].tema==="Tecnología") { %> selected <% } %>
 	>Tecnología</option>
 	<option value="Otro"
-		<% if (quizes.tema==="Otro") { %> selected <% } %>
+		<% if (quizes[i].tema==="Otro") { %> selected <% } %>
 	>Otro</option>
 	<input type="submit">
 </select><br><br>
 </form>
-
-<table>
-	<% var i; for (i=0; i < quizes.length; i++) { %>
-		<tr>
+</td>
 			<td>
 				<a href="quizes/<%= quizes[i].id %>"><%= quizes[i].tema %></a>
 			</td>

@@ -1,3 +1,15 @@
+    <form method="get" action="/quizes">
+    	<label>Tema </label>
+    <select name="tema">
+	<option name="humanidades" name="humanidades" selected>Humanidades</option>
+	<option name="ocio" name="ocio">Ocio</option>
+	<option name="ciencia" name="ciencia">Ciencia</option>
+	<option name="tecnologia" name="tecnologia">Tecnología</option>
+	<option name="otro" name="otro">Otro</option>
+	<input type="submit">
+</select>
+</form>
+
 <table>
 	<% var i; for (i=0; i < quizes.length; i++) { %>
 		<tr>

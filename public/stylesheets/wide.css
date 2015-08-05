@@ -1,8 +1,7 @@
 nav {
   float:left;
   width: 15%;
-  padding-bottom: -32767px;
-  margin-bottom: -32767px;
+  height: 400px;
 }
 
 nav span {
@@ -12,7 +11,7 @@ nav span {
 section {
 	float: right;
 	width: 80%;
-	min-height: 200px;
+	height: 400px;
 }
 
 footer {

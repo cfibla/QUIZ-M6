@@ -12,7 +12,7 @@ body {
 }
 
 #page-wrap > .main {
-	border: 1px solid #4a4a4a;
+	border: 1px solid #053b65;
 	padding: 1%;
 	margin-bottom: 1px;
 	color: black;
@@ -23,11 +23,11 @@ section > div {
 }
 
 header, nav, section {
-	background: #5a5a5a;
+	background: #277553;
 }
 
 footer {
-	background: #6a6a6a;
+	background: #0e7046;
 }
 
 nav span {
@@ -40,5 +40,5 @@ nav span {
 }
 
 a {
-  color: #00B7FF;
+  color: #053b65;
 }

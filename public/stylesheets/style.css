@@ -40,5 +40,6 @@ nav span {
 }
 
 a {
-  color: #053b65;
+	text-decoration: none;
+	color: #000;
 }

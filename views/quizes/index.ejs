@@ -1,12 +1,47 @@
+
+
 <table>
 	<% var i; for (i=0; i < quizes.length; i++) { %>
-		<tr><td><a href="quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %></a></td></tr>
+		<tr>
+			<td>
+				<a href="quizes/<%= quizes[i].id %>"><%= quizes[i].tema %></a>
+			</td>
+			<td>
+				<a href="quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %></a>
+			</td>
+			<td>
+				<a href="quizes/<%= quizes[i].id %>/edit"><button>editar</button></a>
+			</td>
+			<td>
+				<form method='post' action='quizes/<%= quizes[i].id %>?_method=delete'>
+					<button type='submit' onClick='return confirm("Borrar: <%= quizes[i].pregunta %>");'>borrar</button>
+				</form>
+		</tr>
 		<% } %>
-</table>
+</table><br><p>
 
-<form method="get" action="/quizes?search=<%= busqueda %>">
-
-<input type="text" name="busqueda" value="Buscar pregunta"/>
-<input type="submit" value="Buscar">
+<form method="get" action="/quizes">
+<label>Tema </label>
+    <select name="tema">
+    	<option value=""disabled
+    	 selected>
+    	 Selecciona tema</option>
+	<option value="Humanidades"
+		<% if (quizes[0].tema==="Humanidades") { %> selected <% } %>
+	>Humanidades</option>
+	<option value="Ocio"
+		<% if (quizes[0].tema==="Ocio") { %> selected <% } %>
+	>Ocio</option>
+	<option value="Ciencia"
+		<% if (quizes[0].tema==="Ciencia") { %> selected <% } %>
+	>Ciencia</option>
+	<option value="Tecnología"
+		<% if (quizes[0].tema==="Tecnología") { %> selected <% } %>
+	>Tecnología</option>
+	<option value="Otro"
+		<% if (quizes[0].tema==="Otro") { %> selected <% } %>
+	>Otro</option>
+	<input type="submit">
+</select><br><br>
 </form>
-
+<a href = "/quizes/new"><button type"button">Crear pregunta</button></a>

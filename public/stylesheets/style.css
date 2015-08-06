@@ -12,7 +12,11 @@ body {
 }
 
 #page-wrap > .main {
+<<<<<<< HEAD
 	/*border: 1px solid #4a4a4a;*/
+=======
+	border: 1px solid #053b65;
+>>>>>>> busquedas
 	padding: 1%;
 	margin-bottom: 1px;
 	color: black;
@@ -23,11 +27,19 @@ section > div {
 }
 
 header, nav, section {
+<<<<<<< HEAD
 	background: #ffebaa;
 }
 
 footer {
 	background: #d4bb6a;
+=======
+	background: #277553;
+}
+
+footer {
+	background: #0e7046;
+>>>>>>> busquedas
 }
 
 nav span {
@@ -41,9 +53,16 @@ nav span {
 
 a {
 	text-decoration: none;
+<<<<<<< HEAD
 	color: #554100;
 }
 
 a:hover{
 	color: #806615;
+=======
+	color: #000;
+}
+a:hover {
+	color: #333;
+>>>>>>> busquedas
 };

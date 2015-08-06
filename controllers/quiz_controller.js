@@ -16,12 +16,10 @@ exports.load = function(req, res, next, quizId){
 //GET /quizes
 exports.index = function (req, res){
 	if(!req.query.search){
-		models.Quiz.findAll().then(
+
+		res.render('quizes/vacio', {quizes: quizes, errors:[]});
+			
 		
-			function(quizes){
-				res.render('quizes/vacio', {quizes: quizes, errors:[]});
-			}
-		).catch(function(error){next(error);});
 
 
 	} else 

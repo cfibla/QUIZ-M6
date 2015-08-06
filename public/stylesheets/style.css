@@ -23,11 +23,11 @@ section > div {
 }
 
 header, nav, section {
-	background: #5a5a5a;
+	background: #ffebaa;
 }
 
 footer {
-	background: #6a6a6a;
+	background: #d4bb6a;
 }
 
 nav span {
@@ -40,5 +40,10 @@ nav span {
 }
 
 a {
-  color: #00B7FF;
+	text-decoration: none;
+	color: #554100;
 }
+
+a:hover{
+	color: #806615;
+};

@@ -16,14 +16,15 @@ exports.load = function(req, res, next, quizId){
 //GET /quizes
 exports.index = function (req, res){
 
-	if(!models.Quiz.find){
-		res.render('quizes/vacio');
-	} else
+	
 	
 	if(req.query.search){
 		var filtro=(req.query.search||'').replace(" ","%");
 		models.Quiz.findAll({where:['pregunta like ?','%'+filtro+'%'],order:'pregunta ASC'})
 		.then(
+			if(!models.Quiz.find){
+		res.render('quizes/vacio');
+	} else
 			function(quizes){
 				res.render('quizes/index', {quizes: quizes, errors:[]});
 			}

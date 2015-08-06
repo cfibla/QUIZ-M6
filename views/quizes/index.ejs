@@ -5,10 +5,7 @@
 </form><br><p>
 
 <table>
-	<% var i; for (i=0; i < quizes.length; i++){
-	if (quizes[i].pregunta=undefined||null){
-		quizes.pregunta="No hay preguntas"
-	} else { %>
+	<% var i; for (i=0; i < quizes.length; i++){ %>
 		<tr>
 			<td>
 				<a href="quizes/<%= quizes[i].id %>"><%= quizes[i].tema %></a>

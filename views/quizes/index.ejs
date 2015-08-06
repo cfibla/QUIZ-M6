@@ -23,7 +23,7 @@
 		</tr>
 		<% } %>
 </table><br><p>
-
+<% if (typeof(quizes[0].tema==='undefined'){typeof(quizes[0].tema="Humanidades")}%>
 <form method="get" action="/quizes">
 <label>Tema </label>
     <select name="tema">

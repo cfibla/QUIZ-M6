@@ -17,7 +17,7 @@ exports.load = function(req, res, next, quizId){
 exports.index = function (req, res){
 	if(!req.query.search){
 
-		res.render('quizes/vacio', {quizes: quizes, errors:[]});
+		res.render('quizes/vacio');
 			
 		
 

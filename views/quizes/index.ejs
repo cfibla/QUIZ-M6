@@ -23,7 +23,9 @@
 		</tr>
 		<% } %>
 </table><br><p>
-<% if (! quizes){quizes[0].tema="Humanidades"} %>
+<% if (! quizes){function (req, res){
+
+		res.render('quizes/vacio')};} %>
 <form method="get" action="/quizes">
 <label>Tema </label>
     <select name="tema">

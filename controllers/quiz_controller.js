@@ -20,7 +20,7 @@ exports.index = function (req, res){
 		
 	
 	if(req.query.search){
-		var filtro=(req.query.search||'').replace(" ","%");
+		var filtro=(req.query.search||' ').replace(" ","%");
 		models.Quiz.findAll({where:['pregunta like ?','%'+filtro+'%'],order:'pregunta ASC'})
 		.then(
 			function(quizes){
@@ -35,7 +35,7 @@ exports.index = function (req, res){
 	} else 
 
 	if(req.query.tema){
-		var filtro=(req.query.tema || '');
+		var filtro=(req.query.tema || ' ');
 		models.Quiz.findAll({where:['tema like ?','%'+filtro+'%'],order:'tema ASC'})
 		.then(
 			function(quizes){

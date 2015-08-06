@@ -2,7 +2,7 @@ var models=require('../models/models.js');
 
 //Autoload - factoriza el código si ruta incluye :quizId
 exports.load = function(req, res, next, quizId){
-	models.Quiz.find(quizId).then(
+	models.Quiz.findById(quizId).then(
 		function(quiz){
 			if (quiz){
 				req.quiz = quiz;
@@ -20,7 +20,7 @@ exports.index = function (req, res){
 		
 	
 	if(req.query.search){
-		var filtro=(req.query.search||' ').replace(" ","%");
+		var filtro=(req.query.search||'').replace(" ","%");
 		models.Quiz.findAll({where:['pregunta like ?','%'+filtro+'%'],order:'pregunta ASC'})
 		.then(
 			function(quizes){
@@ -35,7 +35,7 @@ exports.index = function (req, res){
 	} else 
 
 	if(req.query.tema){
-		var filtro=(req.query.tema || ' ');
+		var filtro=(req.query.tema || '');
 		models.Quiz.findAll({where:['tema like ?','%'+filtro+'%'],order:'tema ASC'})
 		.then(
 			function(quizes){

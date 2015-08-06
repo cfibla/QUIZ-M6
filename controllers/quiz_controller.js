@@ -22,13 +22,13 @@ exports.index = function (req, res){
 		var filtro=(req.query.search||'').replace(" ","%");
 		models.Quiz.findAll({where:['pregunta like ?','%'+filtro+'%'],order:'pregunta ASC'})
 		.then(
-			if(!models.Quiz.find){
+			if(!models.Quiz.findAll){
 		res.render('quizes/vacio');
-	} else
+	} else{
 			function(quizes){
 				res.render('quizes/index', {quizes: quizes, errors:[]});
 			}
-		).catch(function(error){next(error);});
+		}).catch(function(error){next(error);});
 
 
 	} else 

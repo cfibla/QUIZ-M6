@@ -28,7 +28,7 @@
 <label>Tema </label>
     <select name="tema">
     <option value="Selecciona tema" disabled
-    <% if (quizes[0].tema===undefined) { %> selected <% } %>
+    <% if (quizes[0].tema===undefined||null) { %> selected <% } %>
    	>Selecciona tema</option>
 	<option value="Humanidades"
 		<% if (quizes[0].tema==="Humanidades") { %> selected <% } %>

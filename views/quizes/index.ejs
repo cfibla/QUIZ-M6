@@ -23,9 +23,7 @@
 		</tr>
 		<% } %>
 </table><br><p>
-<% if (! quizes){function (req, res){
-
-		res.render('quizes/vacio')};} %>
+<% if (! quizes){ %> <a href="/quizes">No hay texto</a> <%}%>
 <form method="get" action="/quizes">
 <label>Tema </label>
     <select name="tema">

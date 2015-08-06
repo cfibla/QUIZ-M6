@@ -7,7 +7,7 @@
 <table>
 	<% var i; for (i=0; i < quizes.length; i++){
 	if (quizes[i].pregunta=undefined||null){
-		<a href="/quizes">No hay preguntas</a>
+		quizes.pregunta="No hay preguntas"
 	} else { %>
 		<tr>
 			<td>

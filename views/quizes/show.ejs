@@ -5,3 +5,10 @@ Pregunta: <%= quiz.pregunta %> <p>
 <input type="text" name="respuesta" value="Respuesta"  onFocus="this.value=''"/>
 <input type="submit" value="Enviar">
 </form>
+
+<p><a href="/quizes/ <%= quiz.id %>/comments/new"><button>Añadir comentario</button></a></p>
+
+<p><strong>Comentarios</strong></p>
+<%for (index in quiz.Comments) {%>
+	<p>- <%= quiz.Comments[index].texto %></p>	
+<%}%>

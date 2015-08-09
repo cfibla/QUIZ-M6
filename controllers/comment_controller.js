@@ -12,7 +12,7 @@ exports.create = function(req,res){
 			QuizId: req.params.quizId
 		});
 	comment
-	.validate
+	.validate()
 	.then(
 		function(err){
 			if(err){

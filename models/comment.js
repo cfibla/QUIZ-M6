@@ -5,7 +5,7 @@ module.exports = function (sequelize, DataTypes) {
 		'Comment',
 		{texto:{
 			type: DataTypes.STRING,
-			validate: {notEmpty: {msg:"--> Comentario vacío"}}
+			validate: { notEmpty: {msg:"--> Comentario vacío"}}
 		},
 		publicado: {
 			type: DataTypes.BOOLEAN,

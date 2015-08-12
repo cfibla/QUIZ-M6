@@ -1,3 +1,13 @@
+//MW de autorización de accesos de usuarios con LOGIN - (Accesos  HTTP retringidos)
+exports.loginRequired = function (req,res,next){
+	if(req.session.user){//Si existe la propiedad user en req.session damos paso al siguiente MW (en routes/index)
+		next();
+	} else {
+		res.redirect('/login');
+	}
+};
+
+
 //GET /login - Formulario login
 exports.new = function (req, res){
 	var errors = req.session.errors || {};

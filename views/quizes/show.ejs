@@ -15,8 +15,8 @@ Pregunta: <%= quiz.pregunta %> <p>
 		<p>- <%= quiz.Comments[index].texto %>
 	<% if (session.user && !quiz.Comments[index].publicado) {%>
 		<a href="/quizes/<%= quiz.id %>/comments/<%= quiz.Comments[index].id %>/publish">
-			<button>Publicar</button></a>
+			<button>Publicar</button></a></p>
 	<%}%>
-</p>
+
 <%}%>
 <%}%>

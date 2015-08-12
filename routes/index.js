@@ -5,8 +5,7 @@ var quizController = require ('../controllers/quiz_controller.js');
 var commentController = require ('../controllers/comment_controller.js');
 var sessionController = require ('../controllers/session_controller.js');
 
-/* GET Página de entrada (Home page). */
-
+//GET Página de entrada (Home page).
 router.get('/', function(req, res) {
   res.render('index', { title: 'Quiz', errors:[] });
 });
@@ -21,9 +20,6 @@ router.post('/login',	sessionController.create);	//crear sesión
 router.get('/logout',	sessionController.destroy);	//destruir sesión
 
 //Definición de rutas de /quizes
-//router.get('/quizes/question', quizController.question);
-//router.get('/quizes/answer', quizController.answer);
-
 router.get('/quizes',						quizController.index);
 router.get('/quizes/:quizId(\\d+)',			quizController.show);
 router.get('/quizes/:quizId(\\d+)/answer',	quizController.answer);
@@ -32,10 +28,13 @@ router.post('/quizes/create',				sessionController.loginRequired,	quizController
 router.get('/quizes/:quizId(\\d+)/edit',	sessionController.loginRequired,	quizController.edit);
 router.put('/quizes/:quizId(\\d+)',			sessionController.loginRequired,	quizController.update);
 router.delete('/quizes/:quizId(\\d+)',		sessionController.loginRequired,	quizController.destroy);
+	//ANULADA - router.get('/quizes/question', quizController.question);
+	//ANULADA - router.get('/quizes/answer', quizController.answer);
 
+//Definición de rutas de comentarios
 router.get('/quizes/:quizId(\\d+)/comments/new', commentController.new);
 router.post('/quizes/:quizId(\\d+)/comments', commentController.create);
-router.get('/quizes/:quizId(\\d+)/comments/commentId(\\d+)/publish',
+router.put('/quizes/:quizId(\\d+)/comments/commentId(\\d+)/publish',
 											sessionController.loginRequired, commentController.publish);
 
 router.get('/author', function (req, res, next){

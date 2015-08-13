@@ -42,6 +42,20 @@ app.use(function(req,res,next){
     next();
 });
 
+//Tiempo de sesión
+app.use(function(req,res,next){
+    var tiempoSesion = req.session.timer;
+    var hora = new Date().getTime();
+    var tiempoLimite = 120000;
+    if (hora - tiempoSesion >= tiempoLimite){
+        delete tiempoSesion;
+        res.redirect("/logout");
+    } else {
+        tiempoSesion = hora;
+    }
+    next();
+});
+
 app.use('/', routes);
 //app.use('/users', users);
 

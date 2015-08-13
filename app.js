@@ -51,6 +51,7 @@ app.use(function(req,res,next){
     
     if (hora - req.session.timer >= tiempoLimite){
         delete req.session.timer;
+        req.session.autoLogout = true;
         res.redirect("/logout");
     } else {
         req.session.timer = hora;

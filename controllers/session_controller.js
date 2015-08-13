@@ -37,6 +37,10 @@ exports.create = function (req, res){
 			id:user.id,
 			username:user.username};
 
+		//Crear req.session.timer para guardar la hora
+		req.session.timer = new Date().getTime();
+		req.session.autoLogout = false;
+
 		res.redirect(req.session.redir.toString());//redirección a path anterior a LOGIN	
 	});
 };

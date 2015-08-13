@@ -47,12 +47,13 @@ app.use(function(req,res,next){
     var tiempoSesion = req.session.timer;
     var hora = new Date().getTime();
     var tiempoLimite = 120000;
+    if(tiempoSesion){
     if (hora - tiempoSesion >= tiempoLimite){
         delete tiempoSesion;
         res.redirect("/logout");
     } else {
         tiempoSesion = hora;
-    }
+    }}
     next();
 });
 

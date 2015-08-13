@@ -44,16 +44,16 @@ app.use(function(req,res,next){
 
 //Tiempo de sesión
 app.use(function(req,res,next){
-    var tiempoSesion = req.session.timer;
-    if(tiempoSesion){
+    //var tiempoSesion = req.session.timer;
+    if(req.session.timer){
     var hora = new Date().getTime();
     var tiempoLimite = 12000;
     
-    if (hora - tiempoSesion >= tiempoLimite){
-        delete tiempoSesion;
+    if (hora - req.session.timer >= tiempoLimite){
+        delete req.session.timer;
         res.redirect("/logout");
     } else {
-        tiempoSesion = hora;
+        req.session.timer = hora;
     }}
     next();
 });

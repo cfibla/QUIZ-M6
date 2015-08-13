@@ -1,10 +1,7 @@
 <h2>Login</h2>
 
-<% if (session.autoLogout==true && session.timer!="undefined"){%>
-<br/><label class="error">Periodo de inactividad superior a 2 minutos.<br/>
-Vuelva a introducir sus datos</label>
-<%session.autoLogout=false%>
-<%}%>
+<% if (session.autoLogout==true && session.timer!="undefined"){
+session.autoLogout=false}%>
 
 <form method='POST' action='/login'>
 

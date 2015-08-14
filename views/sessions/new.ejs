@@ -1,7 +1,9 @@
 <h2>Login</h2>
 
-<% if (session.autoLogout==true && session.timer!="undefined"){
-session.autoLogout=false}%>
+<% if (session.autoLogout==true && session.timer!="undefined"){%>
+<p>La sesión ha expirado</p>
+<% session.autoLogout=false%>
+<%}%>
 
 <form method='POST' action='/login'>
 

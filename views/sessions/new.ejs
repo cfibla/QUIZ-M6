@@ -1,6 +1,6 @@
-<% if (session.autoLogout==true && session.timer!="undefined"){%>
+<% if (session.autoLogout==true && session.timer!="undefined"){
+	session.autoLogout=false%>
 <p>La sesión ha expirado</p>
-<% session.autoLogout=false%>
 <%}%>
 
 <h2><br/>Login</h2><br/>

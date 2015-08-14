@@ -1,7 +1,7 @@
 <h2>Login</h2>
 
 <% if (session.autoLogout==true && session.timer!="undefined"){%>
-<p>La sesión ha expirado</p>
+<p>La sesión ha expirado<br/></p>
 <% session.autoLogout=false%>
 <%}%>
 
@@ -14,7 +14,7 @@
 
 	<div class = 'field'>
 		<label for="password">Password:</label><br/>
-		<input type="password" id="password" name="password" size="30"/>
+		<input type="password" id="password" name="password" size="30"/><br/>
 	</div>
 
 	<div class="actions">

@@ -47,12 +47,12 @@ exports.create = function (req, res){
 
 //DELETE /logout - Destruir sesión
 exports.destroy = function (req, res){
-	if (session.autoLogout==true && session.timer!="undefined"){
+	/*if (session.autoLogout==true && session.timer!="undefined"){
 		session.autoLogout=false;
 		req.session.errors = [{"message": 'La sesión ha expirado'}];
 		res.redirect("/login");
 
-	};
+	};*/
 	delete req.session.user;
 	res.redirect(req.session.redir.toString());//redirección a path anterior a LOGIN
 };
